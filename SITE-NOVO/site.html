@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para minha Maria</title>
+    <style>
+        body {
+            background-color: black;
+            color: #d1b48c;
+            font-family: 'Brush Script MT', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        img, video {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        #contador {
+            font-size: 1.5em;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .contador-item {
+            margin: 10px;
+            padding: 20px;
+            border: 2px solid #d1b48c;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Para Minha Princesa</h1>
+    <p>Esta é apenas a primeira página de uma linda história que estamos escrevendo juntos. Cada momento ao seu lado é um presente, e eu não poderia encontrar uma forma melhor de eternizar todo o amor que sinto por você. Seu olhar ilumina meus dias, e seu sorriso tem o poder de me levar ao céu e trazer de volta a felicidade em cada instante. Você é minha Maria, minha vida, meu futuro. Sei que nosso destino é estar juntos, construir uma família repleta de amor e cumplicidade. Com todo carinho do mundo, fiz isso para você, e espero que cada palavra aqui consiga expressar o imenso amor que sinto. 💖</p>
+
+    <p>Um momento especial que ficará para sempre em nossos corações❤️</p>
+    <img src="Imagem do WhatsApp de 2025-03-13 à(s) 22.48.25_087f1371.jpg" alt="Imagem 1">
+
+    <p>Os melhores momentos são aqueles que compartilhamos juntos💞</p>
+    <img src="Imagem do WhatsApp de 2025-03-13 à(s) 22.48.08_313cf0ba.jpg" alt="Imagem 2">
+
+    <p>A vida é feita de escolhas e eu escolhi ficar com você!</p>
+    <img src="Imagem do WhatsApp de 2025-03-13 à(s) 22.48.09_07e45331.jpg" alt="Imagem 3">
+
+    <p>Cada sorriso seu é um presente que ilumina meus dias!</p>
+    <img src="Imagem do WhatsApp de 2025-03-13 à(s) 22.48.25_39d41757.jpg" alt="Imagem 4">
+
+    <p>Me lembro desse dia como se fosse ontem, eu amo você!!!!</p>
+    <video controls>
+        <source src="Vídeo do WhatsApp de 2025-03-13 à(s) 22.48.24_1afdf303.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+    </video>
+
+    <div id="contador">
+        <h2>Nosso Tempo Juntos</h2>
+        <div class="contador-item" id="anos">Anos: 0</div>
+        <div class="contador-item" id="meses">Meses: 0</div>
+        <div class="contador-item" id="semanas">Semanas: 0</div>
+        <div class="contador-item" id="dias">Dias: 0</div>
+        <div class="contador-item" id="horas">Horas: 0</div>
+        <div class="contador-item" id="minutos">Minutos: 0</div>
+        <div class="contador-item" id="segundos">Segundos: 0</div>
+    </div>
+
+    <script>
+        const dataInicio = new Date(2024, 11, 15);
+        function calcularTempoJuntos(agora) {
+            const tempoJuntos = agora - dataInicio;
+            const segundos = Math.floor(tempoJuntos / 1000);
+            const minutos = Math.floor(segundos / 60);
+            const horas = Math.floor(minutos / 60);
+            const dias = Math.floor(horas / 24);
+            const semanas = Math.floor(dias / 7);
+            const meses = Math.floor(dias / 30);
+            const anos = Math.floor(dias / 365);
+            return {
+                anos: anos,
+                meses: meses,
+                semanas: semanas,
+                dias: dias % 30,
+                horas: horas % 24,
+                minutos: minutos % 60,
+                segundos: segundos % 60
+            };
+        }
+        function atualizarContador() {
+            const agora = new Date();
+            const tempo = calcularTempoJuntos(agora);
+            document.getElementById("anos").innerText = `Anos: ${tempo.anos}`;
+            document.getElementById("meses").innerText = `Meses: ${tempo.meses}`;
+            document.getElementById("semanas").innerText = `Semanas: ${tempo.semanas}`;
+            document.getElementById("dias").innerText = `Dias: ${tempo.dias}`;
+            document.getElementById("horas").innerText = `Horas: ${tempo.horas}`;
+            document.getElementById("minutos").innerText = `Minutos: ${tempo.minutos}`;
+            document.getElementById("segundos").innerText = `Segundos: ${tempo.segundos}`;
+        }
+        setInterval(atualizarContador, 1000);
+        atualizarContador();
+    </script>
+</body>
+</html>
